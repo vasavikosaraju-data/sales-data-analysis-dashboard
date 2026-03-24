@@ -39,3 +39,13 @@ print("\nBest Region by Profit:", best_region)
 # Worst Products
 worst_products = df.groupby('Product Name')['Profit'].sum().sort_values().head(5)
 print("\nWorst Products:\n", worst_products)
+# Average Profit Margin
+print("\nAverage Profit Margin:", df['Profit Margin'].mean())
+
+# Highest Sales Month
+best_month = df.groupby('Month')['Sales'].sum().idxmax()
+print("Best Month for Sales:", best_month)
+
+# Lowest Profit Region
+worst_region = df.groupby('Region')['Profit'].sum().idxmin()
+print("Lowest Profit Region:", worst_region)
