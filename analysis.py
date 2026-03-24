@@ -1,22 +1,10 @@
-# Sales Data Analysis Dashboard
+# Profit Margin
+df['Profit Margin'] = df['Profit'] / df['Sales']
 
-## Overview
-This project analyzes retail sales data to uncover trends, regional performance, and product insights.
+# Best Region by Profit
+best_region = df.groupby('Region')['Profit'].sum().idxmax()
+print("Best Region by Profit:", best_region)
 
-## Tools Used
-- Python (Pandas, Matplotlib)
-
-## Key Insights
-- Identified top-performing regions
-- Analyzed monthly sales trends
-- Found top-selling products
-- Compared profit across regions
-
-## Business Value
-This project demonstrates how data analysis can help businesses make better decisions using sales trends and performance metrics.
-
-## Project Steps
-1. Data cleaning and preprocessing
-2. Exploratory data analysis
-3. Data visualization
-4. Insight generation
+# Worst Products (Loss making)
+worst_products = df.groupby('Product Name')['Profit'].sum().sort_values().head(5)
+print("\nWorst Products:\n", worst_products)
