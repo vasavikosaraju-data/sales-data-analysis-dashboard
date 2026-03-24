@@ -1,16 +1,22 @@
-import pandas as pd
-import matplotlib.pyplot as plt
+# Sales Data Analysis Dashboard
 
-# Load dataset
-df = pd.read_csv("SampleSuperstore.csv")
+## Overview
+This project analyzes retail sales data to uncover trends, regional performance, and product insights.
 
-# Show first rows
-print(df.head())
+## Tools Used
+- Python (Pandas, Matplotlib)
 
-# Total Sales
-print("Total Sales:", df['Sales'].sum())
+## Key Insights
+- Identified top-performing regions
+- Analyzed monthly sales trends
+- Found top-selling products
+- Compared profit across regions
 
-# Sales by Region
-region_sales = df.groupby('Region')['Sales'].sum()
-region_sales.plot(kind='bar', title='Sales by Region')
-plt.show()
+## Business Value
+This project demonstrates how data analysis can help businesses make better decisions using sales trends and performance metrics.
+
+## Project Steps
+1. Data cleaning and preprocessing
+2. Exploratory data analysis
+3. Data visualization
+4. Insight generation
